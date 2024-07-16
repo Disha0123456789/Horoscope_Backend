@@ -10,8 +10,8 @@ app = FastAPI(title="Horoscope API", description="Horoscope data API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,
+    allow_origins=["https://divineconnection.co.in"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -23,7 +23,7 @@ async def read_items(horoscope_data: str, time: str):
         if response:
             return {"response": response}
         else:
-            raise HTTPException(status_code=404, detail="Horoscope data not found")
+            raise HTTPException(status_code=404, detail="Horoscope data not fou>
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
