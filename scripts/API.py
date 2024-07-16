@@ -23,7 +23,7 @@ async def read_items(horoscope_data: str, time: str):
         if response:
             return {"response": response}
         else:
-            raise HTTPException(status_code=404, detail="Horoscope data not fou>
+            raise HTTPException(status_code=404, detail="Horoscope data not found")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
